@@ -1,0 +1,94 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* background-color: black; */
+}
+section{
+    position: relative;
+    height: 150%;
+    width: 90%;
+    background-color: hsla(0, 0%, 70%, 0.5);
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px hsla(0, 0%, 50%, 0.5);
+}
+.one-img{
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+}
+.gallary-imgs{
+    width: 500px;
+    height: 90%;
+    min-width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.layer{
+    position: absolute;
+    width: 100%;
+    height: 170%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slider{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.slider-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.arrow-left{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.arrow-right{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.exit{
+    color: white;
+    position: absolute;
+    right: 0%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    cursor: pointer;
+}
