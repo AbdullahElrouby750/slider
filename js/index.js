@@ -35,9 +35,18 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
 });
 
-leftArrow.addEventListener('click', prevSlide);
-rightArrow.addEventListener('click', nextSlide);
-exit.addEventListener('click', closeSlider);
+leftArrow.addEventListener('click',event =>{
+    event.stopPropagation();
+     prevSlide();}
+    );
+rightArrow.addEventListener('click',event =>{
+    event.stopPropagation();
+     nextSlide();}
+    );
+exit.addEventListener('click',event =>{
+    event.stopPropagation();
+     closeSlider();}
+    );
 
 slider.addEventListener('touchstart',startTouching, false);
 slider.addEventListener('touchend',endTouching, false);
