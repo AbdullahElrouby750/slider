@@ -1,5 +1,5 @@
 
-const gallary = Array.from( document.querySelectorAll('.gallary-imgs'));
+const gallary = Array.from(document.querySelectorAll('.gallary-imgs'));
 
 const slider = document.querySelector('.slider')
 const sliderImg = document.querySelector('.slider-img');
@@ -13,20 +13,20 @@ let currentSlider = 0;
 
 //eventListeners
 
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', () => {
 
     gallary.forEach((img, index) => {
         console.log(img);
         console.log(index);
-        
-        img.addEventListener("click", event =>{
+
+        img.addEventListener("click", event => {
             console.log('done');
             event.stopPropagation();
-            
+
             currentSlider = index;
             sliderImg.src = img.src;
             console.log(sliderImg);
-            
+
             slider.classList.remove("d-none");
             console.log(slider);
             layer.classList.remove("d-none");
@@ -35,53 +35,56 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
 });
 
-leftArrow.addEventListener('click',event =>{
+leftArrow.addEventListener('click', event => {
     event.stopPropagation();
-     prevSlide();}
-    );
-rightArrow.addEventListener('click',event =>{
+    prevSlide();
+}
+);
+rightArrow.addEventListener('click', event => {
     event.stopPropagation();
-     nextSlide();}
-    );
-exit.addEventListener('click',event =>{
+    nextSlide();
+}
+);
+exit.addEventListener('click', event => {
     event.stopPropagation();
-     closeSlider();}
-    );
+    closeSlider();
+}
+);
 
-slider.addEventListener('touchstart',startTouching, false);
-slider.addEventListener('touchend',endTouching, false);
-document.body.addEventListener('click', event =>{
-    if(event.target !== slider) closeSlider();
+slider.addEventListener('touchstart', startTouching, false);
+slider.addEventListener('touchend', endTouching, false);
+document.body.addEventListener('click', event => {
+    if (event.target !== slider) closeSlider();
 });
-document.addEventListener('keydown',event =>{
-    if(event.key === 'ArrowLeft') prevSlide();
-    if(event.key === 'ArrowRight') nextSlide();
-    if(event.key === 'Escape') closeSlider();
+document.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') prevSlide();
+    if (event.key === 'ArrowRight') nextSlide();
+    if (event.key === 'Escape') closeSlider();
 });
 
 
 //navigate methods
-function closeSlider(){
+function closeSlider() {
     slider.classList.add('d-none');
     layer.classList.add('d-none');
 }
 
-function nextSlide(){
+function nextSlide() {
     currentSlider = (currentSlider + 1) % gallary.length;
     sliderImg.src = gallary[currentSlider].src;
 }
 
-function prevSlide(){
+function prevSlide() {
     currentSlider = (currentSlider - 1 + gallary.length) % gallary.length;
     sliderImg.src = gallary[currentSlider].src;
 }
 
-function startTouching(event){
+function startTouching(event) {
     touchStartX = event.changedTouches[0].screenX;
 }
 
-function endTouching(event){
-    touchEndX  = event.changedTouches[0].screenX;
+function endTouching(event) {
+    touchEndX = event.changedTouches[0].screenX;
     handleGesture();
 }
 
